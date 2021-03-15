@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# $1 = container name
+
+id=$(docker start "$1")
+
+if ! [ -z "$id" ]; then
+	exit 0
+fi
+
+exit 1

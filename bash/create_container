@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# $1 = user folder (unique) ((user id))
+# $2 = user name
+# $3 = project name
+# $4 = container name (unique) ((project + container id)) (((без project вначале он эрор выдавал ну и пошел он нахуй значит)))
+# $5 = port (unique)
+# $6 = git link
+# $7 = user email
+
+basedir=~/VscMain
+cd $basedir || exit 1
+
+if ! [ -d "$1"/ ]; then
+	mkdir -p "$1"/.config/code-server
+	mkdir -p "$1"/.vscode
+fi
+
+workdir=$basedir/$1
+cd "$workdir" || exit 1
+ 
+if ! [ -f .config/code-server/config.yaml ]; then
+	printf 'auth: none' > .config/code-server/config.yaml
+fi
+
+if [ -d "$3"/ ]; then
+	rm -r "$3"
+fi
+
+git clone "$6" "$3"
+if [ -d "$3"/ ]
+then
+  id=$(docker run -d \
+    --name "$4" \
+    -p 127.0.0.1:"$5":8080 \
+      -v "$workdir/$3:/home/$2/$3" \
+      -v "$workdir/.config:/home/coder/.config" \
+      -v "$workdir/.vscode:/home/coder/.local/share/code-server" \
+      -w "/home/$2/$3" \
+      -e "USER=$2" \
+      codercom/code-server:latest)
+
+    if ! [ -z "$id" ]
+    then
+      docker exec -d "$4" bash -c "git config --global user.email '$7' ; \
+                                   git config --global user.name '$2'"
+      exit 0
+    else
+      exit 1
+    fi
+else
+  exit 1
+fi
+
+exit 1

@@ -1,0 +1,726 @@
+2021-01-17 13:02:07,567 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-17 13:02:11,266 ERROR:Exception occurred
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 247, in start_project
+    subprocess.check_output([path + 'start_container', 'project' + str(container_id)])
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash/start_container', 'project10']' returned non-zero exit status 1.
+2021-01-17 13:02:11,272 INFO:127.0.0.1 - - [17/Jan/2021 13:02:11] "[35m[1mPOST /project HTTP/1.0[0m" 500 -
+2021-01-17 13:02:22,840 ERROR:Exception occurred
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 247, in start_project
+    subprocess.check_output([path + 'start_container', 'project' + str(container_id)])
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/subprocess.py", line 411, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash/start_container', 'project10']' returned non-zero exit status 1.
+2021-01-17 13:02:22,841 INFO:127.0.0.1 - - [17/Jan/2021 13:02:22] "[35m[1mPOST /project HTTP/1.0[0m" 500 -
+2021-01-18 13:39:17,415 INFO:127.0.0.1 - - [18/Jan/2021 13:39:17] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 13:39:17,425 INFO:127.0.0.1 - - [18/Jan/2021 13:39:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:39:19,016 INFO:127.0.0.1 - - [18/Jan/2021 13:39:19] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 13:39:19,025 INFO:127.0.0.1 - - [18/Jan/2021 13:39:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:39:20,864 INFO:127.0.0.1 - - [18/Jan/2021 13:39:20] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 13:39:20,872 INFO:127.0.0.1 - - [18/Jan/2021 13:39:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:44:41,692 INFO:127.0.0.1 - - [18/Jan/2021 13:44:41] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 13:44:42,060 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 139, in retrieve_access_token_params
+    params = self.framework.generate_access_token_params(self.request_token_url, request)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/integration.py", line 40, in generate_access_token_params
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+2021-01-18 13:44:42,079 INFO:127.0.0.1 - - [18/Jan/2021 13:44:42] "[35m[1mGET /authorize?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=NY00wI3JQZ8YzNgII6Glr5eTo5NJR1 HTTP/1.1[0m" 500 -
+2021-01-18 13:44:42,259 INFO:127.0.0.1 - - [18/Jan/2021 13:44:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:44:58,898 INFO:127.0.0.1 - - [18/Jan/2021 13:44:58] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 13:44:58,901 INFO:127.0.0.1 - - [18/Jan/2021 13:44:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:45:00,516 INFO:127.0.0.1 - - [18/Jan/2021 13:45:00] "[32mGET /login HTTP/1.1[0m" 302 -
+2021-01-18 13:45:01,987 INFO:127.0.0.1 - - [18/Jan/2021 13:45:01] "[37mGET /authorize?code=078d229cc353e0f096d0&state=Nap2KBsmuy1YF4FtVaYsJz2GDKN8bI HTTP/1.1[0m" 201 -
+2021-01-18 13:45:02,014 INFO:127.0.0.1 - - [18/Jan/2021 13:45:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 13:51:34,814 INFO:127.0.0.1 - - [18/Jan/2021 13:51:34] "[37mGET / HTTP/1.0[0m" 200 -
+2021-01-18 13:51:34,946 INFO:127.0.0.1 - - [18/Jan/2021 13:51:34] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+2021-01-18 16:02:41,753 INFO:127.0.0.1 - - [18/Jan/2021 16:02:41] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 16:02:42,105 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 139, in retrieve_access_token_params
+    params = self.framework.generate_access_token_params(self.request_token_url, request)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/integration.py", line 40, in generate_access_token_params
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+2021-01-18 16:02:42,117 INFO:127.0.0.1 - - [18/Jan/2021 16:02:42] "[35m[1mGET /authorize?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=d42Yxb9nwGyPKOwvbCBz6GVn86Jaaj HTTP/1.1[0m" 500 -
+2021-01-18 16:02:42,287 INFO:127.0.0.1 - - [18/Jan/2021 16:02:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 16:17:57,618 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 139, in retrieve_access_token_params
+    params = self.framework.generate_access_token_params(self.request_token_url, request)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/integration.py", line 40, in generate_access_token_params
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+2021-01-18 16:17:57,625 INFO:127.0.0.1 - - [18/Jan/2021 16:17:57] "[35m[1mGET /authorize?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=d42Yxb9nwGyPKOwvbCBz6GVn86Jaaj HTTP/1.1[0m" 500 -
+2021-01-18 16:17:58,117 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 16:17:58,118 INFO:127.0.0.1 - - [18/Jan/2021 16:17:58] "[35m[1mGET /authorize?code=078d229cc353e0f096d0&state=Nap2KBsmuy1YF4FtVaYsJz2GDKN8bI HTTP/1.1[0m" 500 -
+2021-01-18 16:17:58,262 INFO:127.0.0.1 - - [18/Jan/2021 16:17:58] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 16:17:58,266 INFO:127.0.0.1 - - [18/Jan/2021 16:17:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 16:17:58,966 INFO:127.0.0.1 - - [18/Jan/2021 16:17:58] "[32mGET /login HTTP/1.1[0m" 302 -
+2021-01-18 16:18:00,719 INFO:127.0.0.1 - - [18/Jan/2021 16:18:00] "[37mGET /authorize?code=6921ca992996c28267ad&state=dAYjlbaukRxNuDsDeHlEjpTPoMJTs7 HTTP/1.1[0m" 201 -
+2021-01-18 16:18:00,749 INFO:127.0.0.1 - - [18/Jan/2021 16:18:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 16:45:37,802 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 16:45:37,809 INFO:127.0.0.1 - - [18/Jan/2021 16:45:37] "[35m[1mGET /authorize?code=6921ca992996c28267ad&state=dAYjlbaukRxNuDsDeHlEjpTPoMJTs7 HTTP/1.1[0m" 500 -
+2021-01-18 16:45:38,033 INFO:127.0.0.1 - - [18/Jan/2021 16:45:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 16:45:46,899 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 74, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 16:45:46,903 INFO:127.0.0.1 - - [18/Jan/2021 16:45:46] "[35m[1mGET /authorize?code=6921ca992996c28267ad&state=dAYjlbaukRxNuDsDeHlEjpTPoMJTs7http://localhost:5000/authorize?code=6921ca992996c28267ad&state=dAYjlbaukRxNuDsDeHlEjpTPoMJTs7 HTTP/1.1[0m" 500 -
+2021-01-18 17:04:25,415 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:04:30,701 INFO:127.0.0.1 - - [18/Jan/2021 17:04:30] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 17:04:30,709 INFO:127.0.0.1 - - [18/Jan/2021 17:04:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:04:31,894 INFO:127.0.0.1 - - [18/Jan/2021 17:04:31] "[32mGET /login HTTP/1.1[0m" 302 -
+2021-01-18 17:04:32,990 INFO:127.0.0.1 - - [18/Jan/2021 17:04:32] "[37mGET /authorize?code=73728faf4631e031aea1&state=wwWy6QVw3ujrQOqpzKVR5tuvZ2TmTW HTTP/1.1[0m" 201 -
+2021-01-18 17:04:33,188 INFO:127.0.0.1 - - [18/Jan/2021 17:04:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:06:26,644 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:06:30,479 INFO:127.0.0.1 - - [18/Jan/2021 17:06:30] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 17:06:30,483 INFO:127.0.0.1 - - [18/Jan/2021 17:06:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:06:32,950 INFO:127.0.0.1 - - [18/Jan/2021 17:06:32] "[33mGET /ll HTTP/1.1[0m" 404 -
+2021-01-18 17:06:32,967 INFO:127.0.0.1 - - [18/Jan/2021 17:06:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:06:33,645 INFO:127.0.0.1 - - [18/Jan/2021 17:06:33] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 17:06:33,647 INFO:127.0.0.1 - - [18/Jan/2021 17:06:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:06:34,372 INFO:127.0.0.1 - - [18/Jan/2021 17:06:34] "[32mGET /login HTTP/1.1[0m" 302 -
+2021-01-18 17:06:35,738 INFO:127.0.0.1 - - [18/Jan/2021 17:06:35] "[37mGET /authorize?code=f32a451af051d0e82baf&state=KO4K76JH5uFfuVFOYDoJYQaW8TOFTd HTTP/1.1[0m" 201 -
+2021-01-18 17:06:35,764 INFO:127.0.0.1 - - [18/Jan/2021 17:06:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:07:54,710 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 49, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:07:54,723 INFO:127.0.0.1 - - [18/Jan/2021 17:07:54] "[35m[1mGET /authorize?code=876ea90bab5003cc56d6&state=KO4K76JH5uFfuVFOYDoJYQaW8TOFTd HTTP/1.1[0m" 500 -
+2021-01-18 17:07:54,765 INFO:127.0.0.1 - - [18/Jan/2021 17:07:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:12:49,963 INFO:127.0.0.1 - - [18/Jan/2021 17:12:49] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:12:50,739 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 49, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 139, in retrieve_access_token_params
+    params = self.framework.generate_access_token_params(self.request_token_url, request)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/integration.py", line 40, in generate_access_token_params
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+2021-01-18 17:12:50,748 INFO:127.0.0.1 - - [18/Jan/2021 17:12:50] "[35m[1mGET /authorize?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=FN3Fh3qQaqAGn82txputneqkcvKAzY HTTP/1.1[0m" 500 -
+2021-01-18 17:12:50,838 INFO:127.0.0.1 - - [18/Jan/2021 17:12:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:15:58,823 INFO:127.0.0.1 - - [18/Jan/2021 17:15:58] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:15:59,157 INFO:127.0.0.1 - - [18/Jan/2021 17:15:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:16:39,845 INFO:127.0.0.1 - - [18/Jan/2021 17:16:39] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:16:40,040 INFO:127.0.0.1 - - [18/Jan/2021 17:16:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:16:49,185 INFO:127.0.0.1 - - [18/Jan/2021 17:16:49] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:17:57,593 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:18:02,144 INFO:127.0.0.1 - - [18/Jan/2021 17:18:02] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:19:36,278 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:19:40,952 INFO:127.0.0.1 - - [18/Jan/2021 17:19:40] "[37mGET / HTTP/1.0[0m" 200 -
+2021-01-18 17:19:45,165 INFO:127.0.0.1 - - [18/Jan/2021 17:19:45] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:19:46,765 INFO:127.0.0.1 - - [18/Jan/2021 17:19:46] "[37mGET /authorize?code=e6804a0e5893f11cd467&state=RuhDv7VhOqdkqu5doHgoLzzXjKzL3h HTTP/1.0[0m" 201 -
+2021-01-18 17:19:47,107 INFO:127.0.0.1 - - [18/Jan/2021 17:19:47] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+2021-01-18 17:19:59,297 INFO:127.0.0.1 - - [18/Jan/2021 17:19:59] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:19:59,822 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:19:59,830 INFO:127.0.0.1 - - [18/Jan/2021 17:19:59] "[35m[1mGET /authorize?code=706ad609a3423b8062ac&state=5g9Epl4F9XzEGsqhUybOipDxw9uKEo HTTP/1.0[0m" 500 -
+2021-01-18 17:19:59,997 INFO:127.0.0.1 - - [18/Jan/2021 17:19:59] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+2021-01-18 17:22:11,725 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:22:25,065 INFO:127.0.0.1 - - [18/Jan/2021 17:22:25] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:22:34,798 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 139, in retrieve_access_token_params
+    params = self.framework.generate_access_token_params(self.request_token_url, request)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/integration.py", line 40, in generate_access_token_params
+    raise OAuthError(error=error, description=description)
+authlib.integrations.base_client.errors.OAuthError: redirect_uri_mismatch: The redirect_uri MUST match the registered callback URL for this application.
+2021-01-18 17:22:34,812 INFO:127.0.0.1 - - [18/Jan/2021 17:22:34] "[35m[1mGET /authorize?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=hsUtC5ZtpEM23g3LSQNrhgKvuT7q8h HTTP/1.0[0m" 500 -
+2021-01-18 17:22:35,474 INFO:127.0.0.1 - - [18/Jan/2021 17:22:35] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+2021-01-18 17:24:07,341 INFO:127.0.0.1 - - [18/Jan/2021 17:24:07] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:24:09,324 INFO:127.0.0.1 - - [18/Jan/2021 17:24:09] "[37mGET /authorize?code=34e5002a94e179d4f22c&state=g7kDiX7oa189Dng9nLkPo31prQ6Nbu HTTP/1.0[0m" 201 -
+2021-01-18 17:25:19,198 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:25:26,088 INFO:127.0.0.1 - - [18/Jan/2021 17:25:26] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:25:28,286 INFO:127.0.0.1 - - [18/Jan/2021 17:25:28] "[37mGET /authorize?code=660a45d701a6b7b65baa&state=uznZBeFymSAHezvxKul1S02x0ro64l HTTP/1.0[0m" 200 -
+2021-01-18 17:25:53,954 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:25:59,584 INFO:127.0.0.1 - - [18/Jan/2021 17:25:59] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:26:01,121 INFO:127.0.0.1 - - [18/Jan/2021 17:26:01] "[32mGET /authorize?code=d4e78aa0197683378d2f&state=JAEyCbRTrxdaMmtN7413jZQknllWlx HTTP/1.0[0m" 302 -
+2021-01-18 17:28:43,713 INFO:127.0.0.1 - - [18/Jan/2021 17:28:43] "[37mGET / HTTP/1.1[0m" 200 -
+2021-01-18 17:28:43,718 INFO:127.0.0.1 - - [18/Jan/2021 17:28:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-01-18 17:28:49,678 INFO:127.0.0.1 - - [18/Jan/2021 17:28:49] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:29:12,522 INFO:127.0.0.1 - - [18/Jan/2021 17:29:12] "[32mGET /authorize?code=ffd647915d00a6b8fd31&state=GIlUsKeeaksQiNKv4cZ9d9OZUThna8 HTTP/1.0[0m" 302 -
+2021-01-18 17:36:10,794 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:36:13,682 INFO:127.0.0.1 - - [18/Jan/2021 17:36:13] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:36:14,877 INFO:127.0.0.1 - - [18/Jan/2021 17:36:14] "[32mGET /authorize?code=ae2b03284ff789ecd9ec&state=GNkfJhN0D8RcHmlYNHmpR8mwpFMxuy HTTP/1.0[0m" 302 -
+2021-01-18 17:37:03,886 INFO:127.0.0.1 - - [18/Jan/2021 17:37:03] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:37:19,936 INFO:127.0.0.1 - - [18/Jan/2021 17:37:19] "[32mGET /authorize?code=9246af2628fd165cdb52&state=gUQ62lwhyf3JFJbIlLreUDFwnekJQe HTTP/1.0[0m" 302 -
+2021-01-18 17:37:20,676 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:37:20,684 INFO:127.0.0.1 - - [18/Jan/2021 17:37:20] "[35m[1mGET /authorize?code=9246af2628fd165cdb52&state=gUQ62lwhyf3JFJbIlLreUDFwnekJQe HTTP/1.0[0m" 500 -
+2021-01-18 17:37:26,994 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:37:26,996 INFO:127.0.0.1 - - [18/Jan/2021 17:37:26] "[35m[1mGET /authorize?code=9246af2628fd165cdb52&state=gUQ62lwhyf3JFJbIlLreUDFwnekJQe HTTP/1.0[0m" 500 -
+2021-01-18 17:37:40,755 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:37:40,755 INFO:127.0.0.1 - - [18/Jan/2021 17:37:40] "[35m[1mGET /authorize?code=9246af2628fd165cdb52&state=gUQ62lwhyf3JFJbIlLreUDFwnekJQe HTTP/1.0[0m" 500 -
+2021-01-18 17:37:51,555 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:37:53,827 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:37:53,833 INFO:127.0.0.1 - - [18/Jan/2021 17:37:53] "[35m[1mGET /authorize?code=9246af2628fd165cdb52&state=gUQ62lwhyf3JFJbIlLreUDFwnekJQe HTTP/1.0[0m" 500 -
+2021-01-18 17:38:17,146 INFO:127.0.0.1 - - [18/Jan/2021 17:38:17] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:38:18,503 INFO:127.0.0.1 - - [18/Jan/2021 17:38:18] "[32mGET /authorize?code=30c595d0a0099207bb87&state=BtmPRfsUxYOpSrxA6rzArdDoPq0ZXP HTTP/1.0[0m" 302 -
+2021-01-18 17:39:40,166 INFO:127.0.0.1 - - [18/Jan/2021 17:39:40] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:40:08,225 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:40:08,227 INFO:127.0.0.1 - - [18/Jan/2021 17:40:08] "[35m[1mGET /authorize?code=2b906500113d6e40c60c&state=rm78jkrxrle1yIulEKijdkhN7YPWtG HTTP/1.0[0m" 500 -
+2021-01-18 17:40:27,690 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:40:27,691 INFO:127.0.0.1 - - [18/Jan/2021 17:40:27] "[35m[1mGET /authorize?code=2b906500113d6e40c60c&state=rm78jkrxrle1yIulEKijdkhN7YPWtG HTTP/1.0[0m" 500 -
+2021-01-18 17:40:38,653 INFO:127.0.0.1 - - [18/Jan/2021 17:40:38] "[32mGET /authorize?code=2b906500113d6e40c60c&state=rm78jkrxrle1yIulEKijdkhN7YPWtG HTTP/1.0[0m" 302 -
+2021-01-18 17:40:55,798 INFO:127.0.0.1 - - [18/Jan/2021 17:40:55] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:41:06,794 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:41:06,797 INFO:127.0.0.1 - - [18/Jan/2021 17:41:06] "[35m[1mGET /authorize?code=51c40408547021f7b588&state=p21Oq8mRoc7FDub3gz7B3yxkBMrg HTTP/1.0[0m" 500 -
+2021-01-18 17:41:13,543 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:41:13,543 INFO:127.0.0.1 - - [18/Jan/2021 17:41:13] "[35m[1mGET /authorize?code=51c40408547021f7b588&state=p21Oq8mRoc7FDub3gz7B3yxkBMrgM4 HTTP/1.0[0m" 500 -
+2021-01-18 17:41:22,516 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:41:22,519 INFO:127.0.0.1 - - [18/Jan/2021 17:41:22] "[35m[1mGET /authorize?code=51c40408547021f7b588&state=p21Oq8mRoc7FDub3gz7B3yxkBMrgM4 HTTP/1.0[0m" 500 -
+2021-01-18 17:41:25,193 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:41:25,194 INFO:127.0.0.1 - - [18/Jan/2021 17:41:25] "[35m[1mGET /authorize?code=51c40408547021f7b588&state=p21Oq8mRoc7FDub3gz7B3yxkBMrgM4 HTTP/1.0[0m" 500 -
+2021-01-18 17:41:53,042 INFO:127.0.0.1 - - [18/Jan/2021 17:41:53] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:41:54,103 INFO:127.0.0.1 - - [18/Jan/2021 17:41:54] "[32mGET /authorize?code=d8e0c0f2007e8a205495&state=yAXzb4omfg4Vk830gab8QzS80YoeOs HTTP/1.0[0m" 302 -
+2021-01-18 17:46:01,719 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:46:10,384 INFO:127.0.0.1 - - [18/Jan/2021 17:46:10] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:46:11,830 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 89, in authorize
+    return redirect(url_for('main_page', name='username'))
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main_page' with values ['name']. Did you mean 'main' instead?
+2021-01-18 17:46:11,844 INFO:127.0.0.1 - - [18/Jan/2021 17:46:11] "[35m[1mGET /authorize?code=3f29d7b03099f9af888d&state=KA58EdwfE8LdQr2Ibt3nnHwGmRlNbI HTTP/1.0[0m" 500 -
+2021-01-18 17:46:59,001 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:47:01,559 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:47:01,565 INFO:127.0.0.1 - - [18/Jan/2021 17:47:01] "[35m[1mGET /authorize?code=3f29d7b03099f9af888d&state=KA58EdwfE8LdQr2Ibt3nnHwGmRlNbI HTTP/1.0[0m" 500 -
+2021-01-18 17:47:08,196 INFO:127.0.0.1 - - [18/Jan/2021 17:47:08] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:47:09,301 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 89, in authorize
+    aaa = url_for('main_page', name='username')
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main_page' with values ['name']. Did you mean 'main' instead?
+2021-01-18 17:47:09,308 INFO:127.0.0.1 - - [18/Jan/2021 17:47:09] "[35m[1mGET /authorize?code=9607ec834e955b078ae0&state=UxGkD7ekD8yz5ROHQb9s4xP1eUDOTs HTTP/1.0[0m" 500 -
+2021-01-18 17:49:19,418 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:49:26,519 INFO:127.0.0.1 - - [18/Jan/2021 17:49:26] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:49:27,993 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 89, in authorize
+    aaa = url_for('/', name='username')
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint '/' with values ['name']. Did you mean 'authorize' instead?
+2021-01-18 17:49:28,004 INFO:127.0.0.1 - - [18/Jan/2021 17:49:28] "[35m[1mGET /authorize?code=a886f367f3f3f2b04947&state=fooS7yfNYbbt8Xw92hFQwuoKCMKYo2 HTTP/1.0[0m" 500 -
+2021-01-18 17:49:48,211 INFO: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-01-18 17:49:51,332 ERROR:Exception on /authorize [GET]
+Traceback (most recent call last):
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/dmitriikorshun/PycharmProjects/code_server/app.py", line 47, in authorize
+    token = oauth.github.authorize_access_token()
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/flask_client/remote_app.py", line 75, in authorize_access_token
+    params = self.retrieve_access_token_params(flask_req, request_token)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 145, in retrieve_access_token_params
+    params = self._retrieve_oauth2_access_token_params(request, params)
+  File "/Users/dmitriikorshun/.conda/envs/untitled/lib/python3.8/site-packages/authlib/integrations/base_client/base_app.py", line 126, in _retrieve_oauth2_access_token_params
+    raise MismatchingStateError()
+authlib.integrations.base_client.errors.MismatchingStateError: mismatching_state: CSRF Warning! State not equal in request and response.
+2021-01-18 17:49:51,336 INFO:127.0.0.1 - - [18/Jan/2021 17:49:51] "[35m[1mGET /authorize?code=a886f367f3f3f2b04947&state=fooS7yfNYbbt8Xw92hFQwuoKCMKYo2 HTTP/1.0[0m" 500 -
+2021-01-18 17:49:54,816 INFO:127.0.0.1 - - [18/Jan/2021 17:49:54] "[32mGET /login HTTP/1.0[0m" 302 -
+2021-01-18 17:49:55,911 INFO:127.0.0.1 - - [18/Jan/2021 17:49:55] "[32mGET /authorize?code=c97558b4f03a00664dfc&state=MC4QHPHc4BTufOA9HZxFCVGlTpNSGU HTTP/1.0[0m" 302 -
