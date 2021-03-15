@@ -1,6 +1,0 @@
-#!/bin/bash
-
-rm /usr/local/etc/openresty/nginx.conf
-cp /Users/dmitriikorshun/PycharmProjects/code_server/nginx/nginx.conf /usr/local/etc/openresty/
-brew services restart openresty
-openresty -c /usr/local/etc/openresty/nginx.conf -t
